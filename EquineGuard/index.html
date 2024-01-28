@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="navbar_container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="About_Us.html" target="_blank">About</a></li>
+                <li><a href="">New Entry</a></li>
+                <li><a href="">Data</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <section id="home">
+        <h1 class="center">Welcome to EquineGuard</h1>
+    </section>
+    <div class="validation-box">
+
+    </div>
+    <div id="form_container">
+        <h3 class="center">Register a new equine</h3>
+        <form id=form action="#">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter name of new Equine" id="name">
+            <div id="type">Enter the type of Equine: <label for="Horse">Horse <input type="radio" id="Horse"
+                        value="Horse" name="type"></label>
+
+                <label for="Donkey">Donkey <input type="radio" id="Donkey" value="Donkey" name="type"></label>
+
+                <label for="Mule">Mule <input type="radio" id="Mule" value="Mule" name="type"></label>
+            </div>
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed" id="breed" placeholder="Enter breed of new Equine">
+            <div id="gender">Enter the Gender of Equine: 
+                <label for="Male">Male <input type="radio" id="Male"
+                        value="Male" name="gend"></label>
+                <label for="Female">Female <input type="radio" id="Female"
+                        value="Female" name="gend"></label>
+
+            
+            </div>
+            <label for="Age">Age:</label>
+            <input type="number" name="Age" id="age" placeholder="Enter age of new Equine">
+            <label for="weight">Weight:</label>
+            <input type="number" name="weight" id="weight" placeholder="Enter weight of new Equine">
+
+            <input type="submit" id="submit">
+
+
+        </form>
+    </div>
+    
+    <footer id ="footer">
+         <h1 class="center"> Contact Us </h1>
+         <div id = footerlinks>
+         <div class="footerlogo">
+          <a href="https://www.instagram.com/monishp31"><img src="/Images/instagram.png" alt="">Instagram</a>
+         </div> 
+         <div class="footerlogo">
+          <a href="mailto:monishp701@gmail.com"><img src="/Images/email_542689.png" alt="">Email</a>
+         </div> 
+         <div class="footerlogo">
+         <a href="https://www.linkedin.com/in/monish-patel-7b8565228">   <img src="/Images/linkedin.png" alt="">Linkedin</a>
+         </div> 
+         </div>
+
+        <div id="footerbottom"class="center">All rights reserved &copy;Patel Monish</div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
