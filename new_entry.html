@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new_entry.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar_container">
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About_Us.html">About</a></li>
+                <li><a href="new_entry.html">New Entry</a></li>
+                <li><a href="data.html">Data</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="container">
+        <h1 class="center" id="mainheading">Equine Data</h1> 
+        <div class="evalidation">
+
+        </div>
+        <form action="#" id="entryForm">
+            <label for="id">Enter Equine Id:</label>
+            <input type="number" name="id" id="ename" placeholder="Enter Id">
+            <label for="weight">Enter Weight Loaded:</label>
+            <input type="number" name="weight" id="eweight" placeholder="Weight in kg">
+            <label for="datetime">Enter Date:</label>
+            <input type="datetime-local" value=""2024-01-01T12:00"" name="datetime" id="edate">
+            <input type="submit" id="entrysubmit">
+        </form>
+        <div id="warningGuidelines">
+            <h1>Warning Guidelines:</h1>
+    
+            <h2>Maximum Trips in a Day:</h2>
+            <p>Equines are limited to a maximum of 3 trips in a single day.</p>
+    
+            <h2>Maximum Trips in a Month:</h2>
+            <p>Each equine has a monthly limit of 75 trips.</p>
+    
+            <h2>Maximum Weight per Trip:</h2>
+            <p>The loaded weight for each trip must not exceed 60 kilograms.</p>
+    
+            <h2>Important Notice:</h2>
+            <p>Exceeding these limits may compromise the well-being of the equine and result in penalties or restrictions. Please ensure compliance with these guidelines for the safety and health of the equines.</p>
+        </div>
+        <table class="center">
+            <thead>
+                <th>ID</th>
+                <th>Weight Loaded</th>
+                <th>Date and Time</th>
+                <th>Total Trips</th>
+                <th>Total Weight</th>
+                <th>Status</th>
+            </thead>
+            <tbody id='entrytable-body'>
+            
+            </tbody>        
+                
+        </table>
+        <footer id ="footer">
+            <h1 class="center"> Contact Us </h1>
+            <div id = footerlinks>
+            <div class="footerlogo">
+             <a href="https://www.instagram.com/monishp31"><img src="/Images/instagram.png" alt="">Instagram</a>
+            </div> 
+            <div class="footerlogo">
+             <a href="mailto:monishp701@gmail.com"><img src="/Images/email_542689.png" alt="">Email</a>
+            </div> 
+            <div class="footerlogo">
+            <a href="https://www.linkedin.com/in/monish-patel-7b8565228">   <img src="/Images/linkedin.png" alt="">Linkedin</a>
+            </div> 
+            </div>
+    
+           <div id="footerbottom"class="center">All rights reserved &copy;Patel Monish</div>
+          
+       </footer>
+    </div>
+  <script src="new_entry.js"></script>
+</body>
+</html>

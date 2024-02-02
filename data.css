@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar_container {
+    position:sticky;
+    top: 0px;
+    font-family: 'Lato';
+}
+
+#navbar::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color:#333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    border: 1px solid gray;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+
+}
+
+nav ul li a {
+    font-size: 1.6rem;
+    padding: 70px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+#container{
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    color: #333;
+    align-items: center;
+    overflow: auto;
+    background: linear-gradient(to bottom, #85D8CE, #3E75A3);
+}
+#mainheading {
+    margin-top: 20px;
+    font-size: 3.5rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center; 
+    padding: 10px 0;
+    background-color: #333; 
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #ffcc00; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+table{
+    position: relative;
+    left: 35vh;
+    margin: 50px 0px;
+    border: 1px solid white;
+    font-size: 30px;
+    padding: 0px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+   
+}
+table th{
+    border: 2px solid #ddd;
+    padding: 20px;
+}
+table td{
+    border: 2px solid #ddd;
+    padding: 20px;
+}
+#footer {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    border-top: 3px solid gray;
+    color: white;
+    font-family: 'Lato';
+}
+
+#footer h1 {
+    margin-top: 50px;
+    font-size: 4rem;
+    color: white;
+    font-family: 'PlayFair Display';
+    text-decoration: underline;
+}
+
+
+#footerlinks {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+    padding: 10px;
+
+}
+
+.footerlogo img {
+    filter: invert(1);
+    width: 20%;
+    margin-bottom: 15px;
+}
+
+.footerlogo a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.footerlogo a:hover{
+    text-decoration: underline;
+}
+#footerbottom {
+    background-color: rgb(7, 5, 5);
+    position: relative;
+    bottom: 0px;
+    font-size: 1.13rem;
+}
+
+.center {
+    text-align: center;
+}
