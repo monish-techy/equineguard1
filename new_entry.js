@@ -73,7 +73,7 @@ class Entry {
 
 let eform = document.getElementById('entryForm');
 let evalidation = document.querySelector(".evalidation");
-let todaytrip,monthtrip,todayweight,monthweight=0;
+let todaytrip=0,monthtrip=0,todayweight=0,monthweight=0;
 eform.addEventListener('submit',(e)=>{
 e.preventDefault();   
 const ename = document.querySelector('#ename').value;
