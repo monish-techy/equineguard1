@@ -2,58 +2,56 @@ document.addEventListener('DOMContentLoaded',()=>{
  
     });
     let entryindex = 0;
-    function updateentryTable(entryindex)
-    {
-    let entryTable = document.getElementById('entrytable-body');
-    entries = getEntries();
-    let entryId = entries[entryindex].ename;
-    let existingRow = document.querySelector(`#entrytable-body [data-name="${entryId}"]`);
-    if (existingRow) {
-        const today = new Date();
-        let existingDatetime = new Date(existingRow.children[2].innerText);
-        if ( existingDatetime.getDate() === today.getDate() && existingDatetime.getMonth() === today.getMonth() &&  existingDatetime.getFullYear() === today.getFullYear()) 
-            {
-            entries[entryindex].todaytrip++;
-            entries[entryindex].todayweight += eweight;
-        }
-         if (existingDatetime.getMonth() === today.getMonth() && existingDatetime.getFullYear() === today.getFullYear()) {
-            entries[entryindex].monthtrip++;
-            entries[entryindex].monthweight += eweight;
-        }
-        existingRow.children[1].innerText = entries[entryindex].eweight;
-        existingRow.children[2].innerText = entries[entryindex].existingDatetime;
-        existingRow.children[3].innerText = "Trips this month: " + entries[entryindex].monthtrip + " (Today: " + entries[entryindex].todaytrip + ")";
-        existingRow.children[4].innerText = "Total weight this month:" + entries[entryindex].monthweight + "(Today:" + entries[entryindex].todayweight + ")";
-        if(todaytrip>3||monthtrip>75){
-        existingRow.children[5].innerText= 'OverWorked';
-        existingRow.children[5].classList.add('red') ;
-        }
+    function updateentryTable(entryindex){
+        let entryTable = document.getElementById('entrytable-body');
+        entries = getEntries();
+        let entryId = entries[entryindex].ename;
+        let existingRow = document.querySelector(`#entrytable-body [data-name="${entryId}"]`);
+        if (existingRow) {
+            const today = new Date();
+            let existingDatetime = new Date(existingRow.children[2].innerText);
+            if ( existingDatetime.getDate() === today.getDate() && existingDatetime.getMonth() === today.getMonth() &&  existingDatetime.getFullYear() === today.getFullYear()) 
+                {
+                entries[entryindex].todaytrip++;
+                entries[entryindex].todayweight += eweight;
+            }
+            if (existingDatetime.getMonth() === today.getMonth() && existingDatetime.getFullYear() === today.getFullYear()) {
+                entries[entryindex].monthtrip++;
+                entries[entryindex].monthweight += eweight;
+            }
+            existingRow.children[1].innerText = entries[entryindex].eweight;
+            existingRow.children[2].innerText = entries[entryindex].existingDatetime;
+            existingRow.children[3].innerText = "Trips this month: " + entries[entryindex].monthtrip + " (Today: " + entries[entryindex].todaytrip + ")";
+            existingRow.children[4].innerText = "Total weight this month:" + entries[entryindex].monthweight + "(Today:" + entries[entryindex].todayweight + ")";
+            if(todaytrip>3||monthtrip>75){
+            existingRow.children[5].innerText= 'OverWorked';
+            existingRow.children[5].classList.add('red') ;
+            }
 
-        return;
-    }
-    let row = document.createElement('tr');
-    let c1 = document.createElement('td');
-    let c2 = document.createElement('td');
-    let c3 = document.createElement('td');
-    let c4 = document.createElement('td');
-    let c5 = document.createElement('td');
-    let c6 = document.createElement('td');
-    c1.innerText=entries[entryindex].ename;
-    c2.innerText=entries[entryindex].eweight;
-    c3.innerText=entries[entryindex].datetime;
-    c4.innerText= "Trips this month: " + entries[entryindex].monthtrip + " (Today: " + entries[entryindex].todaytrip + ")";
-    c5.innerText="Total weight this month:"+entries[entryindex].monthweight+"(Today:"+entries[entryindex].todayweight+")";
-    c6.innerText= "Okay";
-    c6.classList.add('green');
-    row.appendChild(c1);
-    row.appendChild(c2);
-    row.appendChild(c3);
-    row.appendChild(c4);
-    row.appendChild(c5);
-    row.appendChild(c6);
-    
-    entryTable.appendChild(row);
-    
+            return;
+        }
+        let row = document.createElement('tr');
+        let c1 = document.createElement('td');
+        let c2 = document.createElement('td');
+        let c3 = document.createElement('td');
+        let c4 = document.createElement('td');
+        let c5 = document.createElement('td');
+        let c6 = document.createElement('td');
+        c1.innerText=entries[entryindex].ename;
+        c2.innerText=entries[entryindex].eweight;
+        c3.innerText=entries[entryindex].datetime;
+        c4.innerText= "Trips this month: " + entries[entryindex].monthtrip + " (Today: " + entries[entryindex].todaytrip + ")";
+        c5.innerText="Total weight this month:"+entries[entryindex].monthweight+"(Today:"+entries[entryindex].todayweight+")";
+        c6.innerText= "Okay";
+        c6.classList.add('green');
+        row.appendChild(c1);
+        row.appendChild(c2);
+        row.appendChild(c3);
+        row.appendChild(c4);
+        row.appendChild(c5);
+        row.appendChild(c6);
+        
+        entryTable.appendChild(row);
     }
 
 
@@ -119,19 +117,46 @@ console.log(datetime);
      setTimeout(() => {
          evalidation.classList.remove('showItem', 'bggreen');
      }, 3000);
-     let entries = JSON.parse(localStorage.getItem('entries'))|| [];
-     entries.push(entry);
-     localStorage.setItem('entries',JSON.stringify(entries));
-     while(entryindex<entries.length)
+
+     /**change made - author Het */
+     const entriesInLocalStorage = JSON.parse(localStorage.getItem('entries')) || [];
+     const indexInLocalStorage = getIndexInLocalStorage(entriesInLocalStorage, entry.ename);
+
+     if (indexInLocalStorage >= 0) {
+        const pastEntry = entriesInLocalStorage[indexInLocalStorage];
+        const newEntry = new Entry(
+            entry.ename,
+            entry.eweight + pastEntry.eweight,
+            entry.datetime,
+            entry.todaytrip + pastEntry.todaytrip,
+            entry.todayweight + pastEntry.todayweight,
+            entry.monthtrip + pastEntry.monthtrip,
+            entry.monthweight + pastEntry.monthweight
+        )
+
+        entriesInLocalStorage[indexInLocalStorage] = newEntry;
+        localStorage.setItem("entries", JSON.stringify(entriesInLocalStorage));
+     } 
+     else {
+        entriesInLocalStorage.push(entry);
+        localStorage.setItem("entries", JSON.stringify(entriesInLocalStorage));
+     }
+     /**change end */
+
+     while(entryindex<entriesInLocalStorage.length)
      {
-     updateentryTable(entryindex);
-    entryindex++;
+        updateentryTable(entryindex);
+        entryindex++;
      }
     }
-    
-     
-
 });
+
+/**change made author Het */
+function getIndexInLocalStorage(entries, id) {
+    console.log(id, entries)
+    return entries.findIndex((entry) => entry.ename == id);
+}
+/**change end */
 
 function getEquine()
  {
