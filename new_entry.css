@@ -16,7 +16,7 @@
     height: 100%;
     width: 100%;
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.9;
     background-color:black;
 }
 
@@ -40,17 +40,26 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+nav ul li a.active {
+    color:gold;
+}
 #mainheading {
     margin-top: 20px;
     font-size: 3.5rem;
-    font-family: 'Playfair Display', serif;
+    font-family: 'PlayFair Display';
     text-align: center; 
     padding: 10px 0;
-    background-color: #333; 
     color: white;
-    text-decoration: underline;
-    text-decoration-color: #ffcc00; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+h2{
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-family: 'Lato';
+    text-align: center; 
+    padding: 10px 0; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 .evalidation{
     height: 70px;
@@ -76,7 +85,7 @@ nav ul li a:hover {
     margin: 80px auto;
     width: 50%;
     align-self: center;
-    color:rgb(33, 31, 31);
+    color:white;
     font-weight: bold;
     font-family: 'Lato';
 }
@@ -91,7 +100,7 @@ nav ul li a:hover {
 #entrysubmit {
     position: relative;
     top: 20px;
-    background-color: black;
+    background-color:rgba(70, 43, 17, 0.924);
     color:white;
     transition: all 0.6s;
 }
@@ -101,21 +110,21 @@ nav ul li a:hover {
 }
 #container{
     position: absolute;
-    width: 100%;
-    height: 90vh;
-    color: #333;
+    height: fit-content;
+    color: white;
     align-items: center;
     overflow: auto;
-    background: linear-gradient(to bottom, #85D8CE, #3E75A3);
+    background: #AA8F66;
+    font-family: 'Lato';
 }
 #warningGuidelines {
-    background-color: rgb(97, 156, 147);
+    background-color: #71550a;
     padding: 20px;
     border-radius: 8px;
-    margin-top: 100px;
+    margin-top: 150px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-    color: #ff3401cc;
+    color: white;
 }
 #warningGuidelines h1{
     text-align: center;
@@ -129,7 +138,6 @@ nav ul li a:hover {
 }
 table{
     position: relative;
-    left: 35vh;
     margin: 50px 0px;
     border: 1px solid white;
     font-size: 30px;
@@ -213,4 +221,228 @@ c6{
 }
 .red{
     color:red;
+}
+
+/*Media Query*/
+@media screen and (max-width:800px) {
+    #navbar_container {
+        position:relative;
+        top: 0px;
+        font-family: 'Lato';
+    }
+    
+    #navbar::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background-color:black;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        border: 1px solid gray;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 2px;
+    
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 2px 7px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    nav ul li a.active {
+        color:gold;
+    }
+    #mainheading {
+        margin-top: 20px;
+        font-size: 1.8rem;
+        font-family: 'PlayFair Display';
+        text-align: center; 
+        padding: 5px 0;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    h2{
+        margin-top: 20px;
+        font-size: 1.2rem;
+        font-family: 'Lato';
+        text-align: center; 
+        padding: 10px 0; 
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    }
+    .evalidation{
+        height: 30px;
+        width: 200px;
+        display: flex;
+        position: relative;
+        top: 30px;
+        left: 82px;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(238, 20, 0);
+        border-radius: 6px;
+        display: none;
+        opacity: 0.97;
+    }
+    #entryForm {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.67rem;
+        padding:0px 0px;
+        margin: 35px auto;
+        width: 50%;
+        align-self: center;
+        color:rgb(33, 31, 31);
+        font-weight: bold;
+        font-family: 'Lato';
+    }
+    
+    #entryForm input {
+        position: relative;
+        font-size: 10px;
+        padding: 8px 10px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    #entrysubmit {
+        position: relative;
+        top: 20px;
+        background-color: black;
+        color:white;
+        transition: all 0.6s;
+    }
+    #entrysubmit:hover{
+        background-color: rgb(27, 24, 24);
+        cursor: pointer;
+    }
+    #container{
+        position: absolute;
+        height: fit-content;
+        color: white;
+        align-items: center;
+        overflow: auto;
+        background: #AA8F66;
+        font-family: 'Lato';
+    }
+    #warningGuidelines {
+        background-color: #71550a;
+        border-radius: 8px;
+        margin-top: 60px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        color: white;
+        font-family: 'Lato';
+        font-size: 0.8rem;
+        padding: 10px 5px;
+    }
+    #warningGuidelines h1{
+        text-align: center;
+    }
+    #warningGuidelines h1, h2, p { 
+        margin-bottom: 16px;
+    }
+    
+    #warningGuidelines p:last-child {
+        margin-bottom: 0;
+    }
+    table{
+        position: relative;
+        margin: 10px 0px;
+        border: 1px solid white;
+        font-size: 9px;
+        padding: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-collapse: collapse;
+    }
+    table th{
+        border: 2px solid #ddd;
+        padding: 5px;
+    }
+    table td{
+        border: 2px solid #ddd;
+        padding: 5px;
+    }
+    c6{
+    
+    }
+    #footer {
+        background-color: black;
+        position: relative;
+        top: 90px;
+        width: 100%;
+        height: 100%;
+        border-top: 3px solid gray;
+        color: white;
+        font-family: 'Lato';
+    }
+    
+    #footer h1 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+    
+    
+    #footerlinks {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0px;
+        padding: 10px;
+    
+    }
+    
+    .footerlogo img {
+        filter: invert(1);
+        width: 20%;
+        margin-bottom: 15px;
+    }
+    
+    .footerlogo a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: 0.7rem;
+        cursor: pointer;
+    }
+    .footerlogo a:hover{
+        text-decoration: underline;
+    }
+    #footerbottom {
+        background-color: rgb(7, 5, 5);
+        position: relative;
+        bottom: 0px;
+        font-size: 0.55rem;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    .showItem{
+        display: flex;
+       
+    }
+    .bggreen{
+        background-color: green;
+    }
+    .green{
+        color: green;
+    }
+
 }

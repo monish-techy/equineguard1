@@ -57,13 +57,15 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
-
+nav ul li a.active {
+    color:gold;
+}
 #About_Text h1{
    color: lightgreen;
    font-family: 'PlayFair Display';
    padding-left: 10px;
    font-size: 3rem;
-   text-decoration: underline;
+  
 }
 h2{
   color: lightseagreen;
@@ -138,4 +140,151 @@ padding: 5px;
     position: relative;
     bottom: 0px;
     font-size: 1.13rem;
+}
+
+/*Media Query*/
+@media screen and (max-width:800px) {
+    html::before{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 210vh ;
+        background-color: rgba(0, 0, 0, 0.45); 
+        z-index: -1; 
+    }
+    html{
+        background:url(/Images/About_Us.jpeg);
+        background-size: cover;
+        
+    }
+    #navbar_container {
+        position:relative;
+        top: 0px;
+        font-family: 'Lato';
+    }
+    
+    #navbar::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background-color:black;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        border: 1px solid gray;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 2px;
+    
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 2px 7px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    nav ul li a.active {
+        color:gold;
+    }
+    #About_Text h1{
+        margin-top: 20px;
+        font-size: 1.8rem;
+        color: lightgreen;
+        font-family: 'PlayFair Display';
+      
+    }
+    h2{
+        color: lightseagreen;
+        font-family: 'PlayFair Display';
+        padding-left: 10px;
+        font-size: 1.4rem;
+      }
+      p{
+          font-family: 'Lato';
+          color: ghostwhite;
+          font-size: 0.7rem;
+          padding: 10px 5px;
+      }
+      #servhead{
+        margin-bottom: 5px;
+      }
+      .servpara{
+      padding: 10px 5px;
+      }
+    #footer {
+        background-color: black;
+        position: relative;
+        top: 90px;
+        width: 100%;
+        height: 100%;
+        border-top: 3px solid gray;
+        color: white;
+        font-family: 'Lato';
+    }
+    
+    #footer h1 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+    
+    
+    #footerlinks {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0px;
+        padding: 10px;
+    
+    }
+    
+    .footerlogo img {
+        filter: invert(1);
+        width: 20%;
+        margin-bottom: 15px;
+    }
+    
+    .footerlogo a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: 0.7rem;
+        cursor: pointer;
+    }
+    .footerlogo a:hover{
+        text-decoration: underline;
+    }
+    #footerbottom {
+        background-color: rgb(7, 5, 5);
+        position: relative;
+        bottom: 0px;
+        font-size: 0.55rem;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    .showItem{
+        display: flex;
+       
+    }
+    .green{
+        background-color: green;
+    }
+    
 }

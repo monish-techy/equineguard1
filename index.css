@@ -40,6 +40,9 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+nav ul li a.active {
+    color:gold;
+}
 .validation-box{
     height: 70px;
     width: 400px;
@@ -74,7 +77,7 @@ nav ul li a:hover {
     font-size: 4rem;
     color: white;
     font-family: 'PlayFair Display';
-    text-decoration: underline;
+  
 }
 
 #form_container {
@@ -197,4 +200,207 @@ nav ul li a:hover {
 }
 .green{
     background-color: green;
+}
+
+/*Media Query*/
+@media screen and (max-width:800px) {
+    #navbar_container {
+        position:relative;
+        top: 0px;
+        font-family: 'Lato';
+    }
+    
+    #navbar::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background-color:black;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        border: 1px solid gray;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 2px;
+    
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 2px 7px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    nav ul li a.active {
+        color:gold;
+    }
+    .validation-box{
+        height: 30px;
+        width: 200px;
+        display: flex;
+        position: relative;
+        top: 30px;
+        left: 82px;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(238, 20, 0);
+        border-radius: 6px;
+        display: none;
+        opacity: 0.97;
+    }
+    #home::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        height: 109.3vh;
+        width: 48.5vh;
+        background: url(Images/Home.jpg);
+        background-position: center;
+        background-size:cover;
+        z-index: -3;
+        opacity: 1;
+    }
+    
+    #home h1 {
+        margin-top: 20px;
+        font-size: 1.8rem;
+        color: white;
+        font-family: 'PlayFair Display';
+      
+    }
+    
+    #form_container {
+        position: relative;
+        top: 40px;
+    
+    }
+    
+    #form_container h3 {
+        font-size: 1rem;
+        color: white;
+        font-family: 'PlayFair Display';
+        
+    }
+    
+    #form {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.67rem;
+        padding:0px 0px;
+        margin: 5px auto;
+        width: 50%;
+        align-self: center;
+        color:rgb(33, 31, 31);
+        font-weight: bold;
+        font-family: 'Lato';
+    }
+    
+    #form input {
+        position: relative;
+        font-size: 10px;
+        padding: 8px 10px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    #gender,
+    #type {
+        display: flex;
+        padding: 4px 0px;
+    }
+    
+    #gender label,
+    #type label {
+        padding: 0px 1px;
+    }
+    
+    #form input [type='radio'] {
+        accent-color: black;
+    }
+    #submit {
+        position: relative;
+        top: 20px;
+        background-color: black;
+        color:white;
+        transition: all 0.6s;
+    }
+    #submit:hover{
+        background-color: rgb(27, 24, 24);
+        cursor: pointer;
+    }
+    
+    #footer {
+        background-color: black;
+        position: relative;
+        top: 90px;
+        width: 100%;
+        height: 100%;
+        border-top: 3px solid gray;
+        color: white;
+        font-family: 'Lato';
+    }
+    
+    #footer h1 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+    
+    
+    #footerlinks {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0px;
+        padding: 10px;
+    
+    }
+    
+    .footerlogo img {
+        filter: invert(1);
+        width: 20%;
+        margin-bottom: 15px;
+    }
+    
+    .footerlogo a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: 0.7rem;
+        cursor: pointer;
+    }
+    .footerlogo a:hover{
+        text-decoration: underline;
+    }
+    #footerbottom {
+        background-color: rgb(7, 5, 5);
+        position: relative;
+        bottom: 0px;
+        font-size: 0.55rem;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    .showItem{
+        display: flex;
+       
+    }
+    .green{
+        background-color: green;
+    }
+    
 }

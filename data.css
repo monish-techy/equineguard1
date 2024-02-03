@@ -16,7 +16,7 @@
     height: 100%;
     width: 100%;
     z-index: -1;
-    background-color:#333;
+    background-color:black;
 }
 
 nav ul {
@@ -39,14 +39,18 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+nav ul li a.active {
+    color:gold;
+}
 #container{
     position: absolute;
     width: 100%;
-    height: 90vh;
-    color: #333;
+    height: fit-content;
+    color: white;
     align-items: center;
     overflow: auto;
-    background: linear-gradient(to bottom, #85D8CE, #3E75A3);
+    background: #AA8F66;
+    font-family: 'Lato';
 }
 #mainheading {
     margin-top: 20px;
@@ -54,10 +58,7 @@ nav ul li a:hover {
     font-family: 'Playfair Display', serif;
     text-align: center; 
     padding: 10px 0;
-    background-color: #333; 
     color: white;
-    text-decoration: underline;
-    text-decoration-color: #ffcc00; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -94,7 +95,7 @@ table td{
     font-size: 4rem;
     color: white;
     font-family: 'PlayFair Display';
-    text-decoration: underline;
+
 }
 
 
@@ -134,4 +135,149 @@ table td{
 
 .center {
     text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    #navbar_container {
+        position:relative;
+        top: 0px;
+        font-family: 'Lato';
+    }
+    
+    #navbar::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background-color:black;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+        border: 1px solid gray;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 2px;
+    
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+        padding: 2px 7px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+    nav ul li a.active {
+        color:gold;
+    }
+    #container{
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        color: white;
+        align-items: center;
+        overflow: auto;
+        background: #AA8F66;
+        font-family: 'Lato';
+    }
+    #mainheading {
+        margin-top: 20px;
+        font-size: 1.8rem;
+        font-family: 'Playfair Display', serif;
+        text-align: center; 
+        padding: 10px 0;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    table{
+        position: relative;
+        left: 3vh;
+        margin: 10px 0px;
+        border: 1px solid white;
+        font-size: 9px;
+        padding: 2px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-collapse: collapse;
+       
+    }
+    table th{
+        border: 2px solid #ddd;
+        padding: 5px;
+    }
+    table td{
+        border: 2px solid #ddd;
+        padding: 5px;
+    }
+    #footer {
+        background-color: black;
+        position: relative;
+        top: 90px;
+        width: 100%;
+        height: 100%;
+        border-top: 3px solid gray;
+        color: white;
+        font-family: 'Lato';
+    }
+    
+    #footer h1 {
+        margin-top: 10px;
+        font-size: 1.8rem;
+    }
+    
+    
+    #footerlinks {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0px;
+        padding: 10px;
+    
+    }
+    
+    .footerlogo img {
+        filter: invert(1);
+        width: 20%;
+        margin-bottom: 15px;
+    }
+    
+    .footerlogo a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: 0.7rem;
+        cursor: pointer;
+    }
+    .footerlogo a:hover{
+        text-decoration: underline;
+    }
+    #footerbottom {
+        background-color: rgb(7, 5, 5);
+        position: relative;
+        bottom: 0px;
+        font-size: 0.55rem;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    .showItem{
+        display: flex;
+       
+    }
+    .green{
+        background-color: green;
+    }
+    
+
 }
