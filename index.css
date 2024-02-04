@@ -264,8 +264,8 @@ nav ul li a.active {
         content: "";
         position: absolute;
         top: 0px;
-        height: 109.3vh;
-        width: 48.5vh;
+        height: 106.3vh;
+        width: 49.5vh;
         background: url(Home.jpg);
         background-position: center;
         background-size:cover;
