@@ -15,7 +15,7 @@ html::before{
     z-index: -1; 
 }
 html{
-    background:url(/Images/About_Us.jpeg);
+    background:url(About_Us.jpeg);
     background-size: cover;
     
 }
