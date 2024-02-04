@@ -65,7 +65,7 @@ nav ul li a.active {
     top: 0px;
     height: 140vh;
     width: 100%;
-    background: url(Images/Home.jpg);
+    background: url(Home.jpg);
     background-position: center;
     background-size: cover;
     z-index: -3;
@@ -266,7 +266,7 @@ nav ul li a.active {
         top: 0px;
         height: 109.3vh;
         width: 48.5vh;
-        background: url(Images/Home.jpg);
+        background: url(Home.jpg);
         background-position: center;
         background-size:cover;
         z-index: -3;
